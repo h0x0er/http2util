@@ -26,7 +26,3 @@ func GetFrameType(f http2.Frame) http2.FrameType {
 	return f.Header().Type
 }
 
-func hasStatusHeader(f *http2.MetaHeadersFrame) bool {
-	status := f.PseudoValue("status")
-	return len(status) > 0
-}
