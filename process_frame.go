@@ -8,7 +8,7 @@ import (
 )
 
 func Frame2String(f http2.Frame) (string, error) {
-	switch ftype := f.(type) {
+	switch f := f.(type) {
 	case *http2.SettingsFrame:
 		return fmt.Sprintf("%#v", f), nil
 	case *http2.MetaHeadersFrame:
