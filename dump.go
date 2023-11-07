@@ -1,23 +1,19 @@
 package parsehttp2frame
 
+// Note: Code is taken from https://cs.opensource.google/go/x/net/+/master:http2
+
 import (
 	"fmt"
-	"net/http/httputil"
 
 	"golang.org/x/net/http2"
 )
 
-func Frame2String(f http2.Frame) (string, error) {
+func Dump(f http2.Frame) (string, error) {
 	switch f := f.(type) {
 	case *http2.SettingsFrame:
 		return fmt.Sprintf("%#v", f), nil
 	case *http2.MetaHeadersFrame:
-		req, err := processHeaders(f)
-		if err != nil {
-			return "", err
-		}
-		b, err := httputil.DumpRequest(req, false)
-		return string(b), err
+		return DumpMetaHeaders(f)
 	case *http2.WindowUpdateFrame:
 		return fmt.Sprintf("%#v", f), nil
 	case *http2.PingFrame:

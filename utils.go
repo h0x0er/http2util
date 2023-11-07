@@ -25,3 +25,4 @@ func BytesToHTTP2Frame(b []byte) (http2.Frame, error) {
 func GetFrameType(f http2.Frame) http2.FrameType {
 	return f.Header().Type
 }
+
