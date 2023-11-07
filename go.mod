@@ -1,4 +1,4 @@
-module github.com/h0x0er/parsehttp2frame
+module github.com/h0x0er/http2util
 
 go 1.21
 

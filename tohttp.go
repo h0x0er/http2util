@@ -1,10 +1,11 @@
-package parsehttp2frame
+package http2util
 
 import (
 	"net/http"
 
 	"golang.org/x/net/http2"
 )
+
 // Frame2HTTPRequest
 func Frame2HTTPRequest(f *http2.MetaHeadersFrame) (*http.Request, error) {
 	return processMetaHeadersForRequest(f)

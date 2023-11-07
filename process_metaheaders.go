@@ -1,4 +1,4 @@
-package parsehttp2frame
+package http2util
 
 // Note: Code is taken from https://cs.opensource.google/go/x/net/+/master:http2
 
@@ -297,7 +297,7 @@ func hasStatusHeader(f *http2.MetaHeadersFrame) bool {
 	return len(status) > 0
 }
 
-// DumpMetaHeaders 
+// DumpMetaHeaders
 func DumpMetaHeaders(f *http2.MetaHeadersFrame) (string, error) {
 
 	// HTTPResponse MetaHeaders

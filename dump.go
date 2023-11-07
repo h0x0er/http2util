@@ -1,4 +1,4 @@
-package parsehttp2frame
+package http2util
 
 // Note: Code is taken from https://cs.opensource.google/go/x/net/+/master:http2
 
