@@ -8,7 +8,7 @@ import (
 	"golang.org/x/net/http2/hpack"
 )
 
-func BytesToHTTP2Frame(b []byte) (http2.Frame, error) {
+func BytesToFrame(b []byte) (http2.Frame, error) {
 
 	rd := bytes.NewReader(b)
 	buf := bufio.NewReader(rd)
