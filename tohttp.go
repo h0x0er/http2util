@@ -7,10 +7,10 @@ import (
 )
 
 // Frame2HTTPRequest
-func Frame2HTTPRequest(f *http2.MetaHeadersFrame) (*http.Request, error) {
+func FrameToHTTPRequest(f *http2.MetaHeadersFrame) (*http.Request, error) {
 	return processMetaHeadersForRequest(f)
 }
 
-func Frame2HTTPResponse(f *http2.MetaHeadersFrame) (*http.Response, error) {
+func FrameToHTTPResponse(f *http2.MetaHeadersFrame) (*http.Response, error) {
 	return processMetaHeadersForResponse(f)
 }
